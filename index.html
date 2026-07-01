@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六堆登山隊四川之旅｜成都・九寨溝・黃龍 7天6夜</title>
+<style>
+  :root {
+    --green-dark: #2e5339;
+    --green: #3e7052;
+    --green-light: #f2f5f0;
+    --gold: #c9a24b;
+    --ink: #2b2b2b;
+    --muted: #6b6b6b;
+    --border: #e2e6df;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", -apple-system, sans-serif;
+    color: var(--ink);
+    background: #fbfaf7;
+    line-height: 1.6;
+  }
+  header.hero {
+    background: linear-gradient(160deg, var(--green-dark), var(--green));
+    color: #fff;
+    padding: 64px 20px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 45%);
+  }
+  header.hero .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  header.hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 0 0 12px;
+    position: relative;
+    font-weight: 800;
+  }
+  header.hero p.subtitle {
+    font-size: clamp(15px, 2.4vw, 19px);
+    color: #e7efe6;
+    margin: 0;
+    position: relative;
+  }
+  header.hero .meta {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  header.hero .meta span {
+    background: rgba(255,255,255,0.12);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  section.intro {
+    margin-top: -30px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: 0 10px 30px rgba(30,50,30,0.06);
+    position: relative;
+    font-size: 15px;
+    color: #444;
+  }
+  section.intro strong { color: var(--green-dark); }
+
+  h2.section-title {
+    color: var(--green-dark);
+    font-size: 24px;
+    margin: 56px 0 22px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--green-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2.section-title .idx {
+    background: var(--green-dark);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .day-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 14px rgba(30,50,30,0.04);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .day-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(30,50,30,0.09); }
+
+  .day-card .day-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .day-card .day-label {
+    color: var(--green-dark);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: var(--green-light);
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .day-card .day-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .day-card ul {
+    margin: 10px 0 12px;
+    padding-left: 20px;
+  }
+  .day-card li { margin-bottom: 4px; font-size: 14.5px; }
+  .day-card .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .badge {
+    font-size: 12.5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border: 1px solid #d8e3d3;
+  }
+  .badge.stay { background: #fbf3e2; color: #8a6d1d; border-color: #f0e0b8; }
+  .highlight-line {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: var(--muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 10px;
+  }
+  .highlight-line b { color: var(--gold); }
+
+  .note-box {
+    background: #fff8ec;
+    border: 1px solid #f0e0b8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #6b5613;
+    margin: 20px 0 8px;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .tips-grid { grid-template-columns: 1fr; }
+  }
+  .tip-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .tip-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tip-card ul { margin: 0; padding-left: 18px; font-size: 14px; color: #444; }
+  .tip-card li { margin-bottom: 6px; }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer .stamp {
+    margin-top: 8px;
+    color: #9a9a9a;
+    font-size: 12px;
+  }
+
+  .discuss-banner {
+    background: var(--green-dark);
+    color: #fff;
+    text-align: center;
+    font-size: 13.5px;
+    padding: 10px 16px;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="discuss-banner">📣 討論版草稿・行程仍在確認中，歡迎在群組留言調整意見</div>
+
+<header class="hero">
+  <span class="tag">六堆登山隊・川西小分隊</span>
+  <h1>成都・九寨溝・黃龍 深度之旅</h1>
+  <p class="subtitle">7天6夜・全程聚焦同一走廊，不趕路、不回頭</p>
+  <div class="meta">
+    <span>🗓️ 7天6夜</span>
+    <span>📍 成都 → 九寨溝 → 牟尼溝 → 松潘 → 黃龍 → 都江堰 → 成都</span>
+    <span>🚄 高鐵＋包車</span>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    這一版行程聚焦在<strong>成都－九寨溝－黃龍</strong>同一條走廊，捨棄稻城亞丁等距離較遠、需要另闢一趟行程的景點，改用<strong>牟尼溝、松潘古城</strong>這類同區域內較少人知道的深度體驗，讓大家把時間花在感受地方，而不是花在拉車上。
+  </section>
+
+  <h2 class="section-title"><span class="idx">1</span>每日行程</h2>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 1</span>
+      <span class="day-title">抵達成都・入住休息</span>
+    </div>
+    <ul>
+      <li>抵達成都天府／雙流國際機場，專車接機</li>
+      <li>入住飯店，晚上錦江夜遊或太古里慢逛</li>
+      <li>吃第一頓道地川菜暖身</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">✈️ 飛機抵達</span>
+      <span class="badge stay">🏨 住宿：成都</span>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 2</span>
+      <span class="day-title">成都 → 九寨溝</span>
+    </div>
+    <ul>
+      <li>搭乘九綿高鐵前往九寨溝，車程約3.5–4小時</li>
+      <li>抵達溝口後，周邊藏寨慢走、適應海拔</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚄 高鐵約3.5–4小時</span>
+      <span class="badge stay">🏨 住宿：九寨溝溝口</span>
+    </div>
+    <div class="highlight-line">海拔約 2,000–2,200m，抵達當晚建議避免劇烈活動</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 3</span>
+      <span class="day-title">九寨溝全天深度遊</span>
+    </div>
+    <ul>
+      <li>樹正溝、日則溝、則查窪溝三條溝全走完</li>
+      <li>長海、五花海、樹正群海、諾日朗瀑布</li>
+      <li>建議避開早上10點前的旅行團尖峰時段</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚌 景區觀光車</span>
+      <span class="badge stay">🏨 住宿：九寨溝溝口</span>
+    </div>
+    <div class="highlight-line"><b>當日亮點：</b>九寨溝精華全景・瀑布、彩池、森林</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 4</span>
+      <span class="day-title">牟尼溝秘境 → 松潘古城</span>
+    </div>
+    <ul>
+      <li>前往牟尼溝：扎嘎瀑布＋二道海，九寨溝旁遊客少、原始度高的秘境</li>
+      <li>下午轉往松潘，入住松潘古城</li>
+      <li>晚上漫步古城牆，品嚐犛牛肉火鍋</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚐 包車約2小時</span>
+      <span class="badge stay">🏨 住宿：松潘古城</span>
+    </div>
+    <div class="highlight-line"><b>當日亮點：</b>牟尼溝原始秘境・松潘古城夜色</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 5</span>
+      <span class="day-title">黃龍深度遊覽</span>
+    </div>
+    <ul>
+      <li>松潘 → 黃龍景區（纜車上山）</li>
+      <li>五彩池、爭艷彩池深度遊覽，順路而非專程往返</li>
+      <li>下午返回川主寺／轉往成都方向</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚐 包車約1.5小時</span>
+      <span class="badge stay">🏨 住宿：川主寺或成都</span>
+    </div>
+    <div class="highlight-line"><b>當日亮點：</b>黃龍五彩池・高原鈣華景觀</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 6</span>
+      <span class="day-title">都江堰深度 → 成都</span>
+    </div>
+    <ul>
+      <li>返程順道深度停留都江堰：南橋、二王廟、離堆公園</li>
+      <li>了解兩千年水利工程與放水節文化</li>
+      <li>下午抵達成都，晚上市區自由活動</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚄 高鐵／包車</span>
+      <span class="badge stay">🏨 住宿：成都</span>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-label">DAY 7</span>
+      <span class="day-title">成都市區收尾 → 返程</span>
+    </div>
+    <ul>
+      <li>熊貓基地（建議上午前往，熊貓較活躍）</li>
+      <li>寬窄巷子或錦里擇一慢逛，採購伴手禮</li>
+      <li>前往機場，返程</li>
+    </ul>
+    <div class="badges">
+      <span class="badge">🚕 市區交通</span>
+      <span class="badge">✈️ 返程</span>
+    </div>
+  </div>
+
+  <div class="note-box">
+    ★ 行程依實際航班、高鐵班次及天氣狀況彈性調整。海拔提示：九寨溝約2,000–2,200m；黃龍約3,000–3,500m；成都約500m。
+  </div>
+
+  <h2 class="section-title"><span class="idx">2</span>實用提醒</h2>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h3>⛰️ 高原反應</h3>
+      <ul>
+        <li>黃龍海拔較高（約3,000–3,500m），建議前1–2天備妥高原安、紅景天</li>
+        <li>抵達當晚避免劇烈活動、多喝水、少飲酒</li>
+        <li>有心肺疾病史者請先諮詢醫師</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <h3>🎫 門票與交通</h3>
+      <ul>
+        <li>九寨溝、黃龍旺季（4–11月）需提前實名預約，建議出發前7–14天完成訂票</li>
+        <li>景區內以官方觀光車接駁為主，不可自駕進入</li>
+        <li>黃龍纜車上山後步行棧道，體力較弱者可考慮往返皆搭纜車</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <h3>🧥 氣候與服裝</h3>
+      <ul>
+        <li>早晚溫差大，需準備防風保暖外套、圍巾及帽子</li>
+        <li>紫外線強烈，防曬乳、太陽眼鏡為必備品</li>
+        <li>山區偶有陣雨，建議攜帶輕便雨具</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <h3>🍜 飲食與採購</h3>
+      <ul>
+        <li>成都火鍋及川菜偏辣，可跟店家說「微辣」或「不辣」</li>
+        <li>松潘、九寨溝周邊可品嚐犛牛肉、藏式酥油茶</li>
+        <li>伴手禮建議：熊貓周邊、川味辣醬、藏式手工藝品</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    行程草案・僅供群組討論參考，實際安排以最終確認為準
+    <div class="stamp">Updated for 六堆登山隊四川之旅 討論版</div>
+  </footer>
+</main>
+
+</body>
+</html>
