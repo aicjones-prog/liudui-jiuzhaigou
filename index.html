@@ -10,6 +10,8 @@
     --green: #3e7052;
     --green-light: #f2f5f0;
     --gold: #c9a24b;
+    --terracotta: #c1613f;
+    --teal: #2c7a7b;
     --ink: #2b2b2b;
     --muted: #6b6b6b;
     --border: #e2e6df;
@@ -19,11 +21,17 @@
     margin: 0;
     font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", -apple-system, sans-serif;
     color: var(--ink);
-    background: #fbfaf7;
+    background:
+      radial-gradient(1100px 600px at 12% -8%, rgba(46,83,57,0.10), transparent 58%),
+      radial-gradient(1000px 550px at 102% 15%, rgba(201,162,75,0.16), transparent 55%),
+      radial-gradient(900px 550px at -5% 78%, rgba(193,97,63,0.10), transparent 55%),
+      radial-gradient(950px 600px at 105% 100%, rgba(44,122,123,0.14), transparent 55%),
+      linear-gradient(180deg, #faf6ec 0%, #f5eedd 40%, #eef1e6 100%);
+    background-attachment: fixed;
     line-height: 1.6;
   }
   header.hero {
-    background: linear-gradient(160deg, var(--green-dark), var(--green));
+    background: linear-gradient(155deg, var(--green-dark) 0%, var(--green) 55%, var(--teal) 130%);
     color: #fff;
     padding: 64px 20px 56px;
     text-align: center;
@@ -128,6 +136,10 @@
     transition: transform .15s ease, box-shadow .15s ease;
   }
   .day-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(30,50,30,0.09); }
+  .day-card:nth-of-type(4n+1) { border-left-color: var(--green-dark); }
+  .day-card:nth-of-type(4n+2) { border-left-color: var(--gold); }
+  .day-card:nth-of-type(4n+3) { border-left-color: var(--terracotta); }
+  .day-card:nth-of-type(4n+4) { border-left-color: var(--teal); }
 
   .day-card .day-head {
     display: flex;
@@ -209,9 +221,14 @@
   .tip-card {
     background: #fff;
     border: 1px solid var(--border);
+    border-top: 4px solid var(--green-dark);
     border-radius: 12px;
     padding: 18px 20px;
   }
+  .tip-card:nth-of-type(4n+1) { border-top-color: var(--green-dark); }
+  .tip-card:nth-of-type(4n+2) { border-top-color: var(--gold); }
+  .tip-card:nth-of-type(4n+3) { border-top-color: var(--terracotta); }
+  .tip-card:nth-of-type(4n+4) { border-top-color: var(--teal); }
   .tip-card h3 {
     margin: 0 0 10px;
     font-size: 16px;
